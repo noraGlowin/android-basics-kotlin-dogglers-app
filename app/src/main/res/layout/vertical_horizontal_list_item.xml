@@ -28,19 +28,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- TODO: Note that, unlike the grid view list, one card in the vertical and horizontal
-               lists effectively take up the width of the screen. This means you have more
-               room to display information spanning the width of the card.-->
 
-        <!-- TODO: Create an ImageView resource for the image of the dog.
-               The height should be 194dp
-               The width should match the with of the card
-               The scaleType should be set to centerCrop-->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:contentDescription="@string/app_name"
+            android:layout_height="194dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
-        <!-- TODO: Create a TextView for each of the following:
-                The dog's name
-                The dog's age
-                The dog's hobbies-->
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Dogglers.TextName"
+            tools:text="@string/app_name"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/imageView"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            />
+
+        <TextView
+            android:id="@+id/textAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/dog_age"
+            app:layout_constraintStart_toStartOf="@id/textName"
+            app:layout_constraintTop_toBottomOf="@id/textName"
+            android:layout_marginBottom="8dp"
+            android:paddingBottom="8dp"
+            style="@style/Widget.Dogglers.TextAge"     />
+
+        <TextView
+            android:id="@+id/textHobbies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/dog_hobbies"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/textName"
+            android:layout_marginEnd="8dp" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
